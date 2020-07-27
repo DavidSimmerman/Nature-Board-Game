@@ -1,0 +1,158 @@
+body {
+}
+
+#board {
+	margin: 0 auto;
+	padding: 2%;
+	height: 40vw;
+	width: 64vw;
+	border: 10px solid black;
+	background-image: url("images/Board.png");
+	background-repeat: no-repeat;
+	background-size: 101% 101%;
+}
+
+table {
+	margin: 0 auto;
+	padding: 0;
+}
+
+tr {
+}
+
+td {
+	text-align: center;
+	width: 4vw;
+}
+
+.space {
+	border: 7px solid rgba(0, 0, 0, .90);
+	border-radius: 25%;
+	background-color: rgba(0, 0, 0, .70);
+}
+
+#title {
+	font-size: 5vh;
+}
+
+#dieContainer {
+	overflow: hidden;
+	padding: 0;
+}
+
+#die {
+	height: 7vw;
+	overflow: hidden;
+	padding: 0;
+}
+
+.space img {
+	margin: 0 auto;
+	height: 3.5vw;
+	width: 3.5vw;
+	overflow: hidden;
+}
+
+#spcStart {
+	visibility: visible;
+}
+
+#spc1 {
+	visibility: hidden;
+}
+
+#spc2 {
+	visibility: hidden;
+}
+
+#spc2 {
+	visibility: hidden;
+}
+
+#spc3 {
+	visibility: hidden;
+}
+
+#spc4 {
+	visibility: hidden;
+}
+
+#spc5 {
+	visibility: hidden;
+}
+
+#spc6 {
+	visibility: hidden;
+}
+
+#spc7 {
+	visibility: hidden;
+}
+
+#spc8 {
+	visibility: hidden;
+}
+
+#spc9 {
+	visibility: hidden;
+}
+
+#spc10 {
+	visibility: hidden;
+}
+
+#spc11 {
+	visibility: hidden;
+}
+
+#spc12 {
+	visibility: hidden;
+}
+
+#spc13 {
+	visibility: hidden;
+}
+
+#spc14 {
+	visibility: hidden;
+}
+
+#spc15 {
+	visibility: hidden;
+}
+
+#spc16 {
+	visibility: hidden;
+}
+
+#spc17 {
+	visibility: hidden;
+}
+
+#spc18 {
+	visibility: hidden;
+}
+
+#spc19 {
+	visibility: hidden;
+}
+
+#spc20 {
+	visibility: hidden;
+}
+
+#spc21 {
+	visibility: hidden;
+}
+
+#spc22 {
+	visibility: hidden;
+}
+
+#spc23 {
+	visibility: hidden;
+}
+
+#spcFinish {
+	visibility: hidden;
+}

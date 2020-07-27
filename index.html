@@ -4,7 +4,7 @@
 		<title>Nature Board Game</title>
 		<META http-equiv="Content-Type" content="text/html; charset-UTF-8">
         <meta content="width=device-width,initial-scale=1.0" name="viewport">
-        <link rel="stylesheet" href="./css/board.css">
+        <link rel="stylesheet" href="./style/board.css">
 	</head>
 	<body>
 		<div id="board">
@@ -17,25 +17,19 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
-					<td class="space" id="finish"><image></image></td>
-					<td></td>
+					<td class="space" id="finish"><image class="emptySpc" , id="spcFinish" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
-					<td></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td></td>
+					<td class="space"><image class="emptySpc" , id="spc17" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc18" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc19" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc20" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc21" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc22" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc23" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
-					<td></td>
-					<td class="space"><image></image></td>
-					<td></td>
+					<td class="space"><image class="emptySpc" , id="spc16" src="style/images/FrogAvatar.png"></image></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -44,15 +38,13 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td></td>
+					<td class="space"><image class="emptySpc" , id="spc15" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc14" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc13" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc12" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc11" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc10" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc9" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -61,33 +53,36 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
-					<td class="space"><image></image></td>
-					<td></td>
+					<td class="space"><image class="emptySpc" , id="spc8" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
-					<td></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td class="space"><image></image></td>
-					<td></td>
+					<td class="space"><image class="emptySpc" , id="spc1" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc2" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc3" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc4" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc5" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc6" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space"><image class="emptySpc" , id="spc7" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
-					<td></td>
-					<td class="space" id="start"><image></image></td>
-					<td></td>
+					<td class="space" id="start"><image class="currentSpc" , id="spcStart" src="style/images/FrogAvatar.png"></image></td>
 					<td></td>
 					<td></td>
 					<td></td>
-					<td colspan="2" rowspan="2" id="die"></td>
 					<td></td>
+					<td colspan="3" rowspan="2" id="dieContainer"><image id="die" src="style/images/Dice1.png"></image></td>
 				</tr>
-				<tr><td></td></tr>
+				<tr>
+					<td class="space" style="visibility: hidden"><image src="style/images/FrogAvatar.png"></image></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					
+				</tr>
 			</table>
 		</div>
+		
+		<script src="./js/nbg.js"></script>
+		
 	</body>
 </html>
