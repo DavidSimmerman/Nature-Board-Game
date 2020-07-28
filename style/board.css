@@ -74,6 +74,10 @@ td {
 	border-radius: 25px;
 	width: 50vw;
 	font-size: 2vw;
+	position: fixed;
+	top: 10vw;
+	left: 23.5vw;
+	visibility: hidden;
 }
 
 #question {

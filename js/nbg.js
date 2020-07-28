@@ -48,8 +48,8 @@ var spcAnswer1 = [
 					"Walk to their house",
 					"Do you replace your phone with a new one",
 					"Drive separately because they live on the other side of town",
+					"Turn out the light to use less electricity",
 					"Flush it down the toilet/throw it in the trash",
-					"Turn ou the light to use less electricity",
 					"Use poison to kill them",
 					"Open the windows",
 					"Buy a part that makes your car quieter",
@@ -160,6 +160,7 @@ function moveBackward(spaces)
 
 function askQuestion()
 {
+	document.getElementById("questionBox").style.visibility = "visible";
 	document.getElementById("dieDisabled1").id = "dieDisabled2";
 	var currentSpc = getCurrentSpace();
 	document.getElementById("question").innerHTML = spcQuestion[currentSpc];
@@ -177,12 +178,18 @@ function clickedAnswer(ans)
 		if(ans == spcCorrectAnswer[getCurrentSpace()])
 		{
 			document.getElementById("answer1").style.backgroundColor = "green";
-			resetQuestion();
+			setTimeout(function() {
+				resetQuestion();
+				document.getElementById("questionBox").style.visibility = "hidden";
+			}, 1500);
 		}
 		else
 		{
 			document.getElementById("answer1").style.backgroundColor = "red";
-			moveBackward(5);
+			setTimeout(function() {
+				moveBackward(5);
+				document.getElementById("questionBox").style.visibility = "hidden";
+			}, 1500);
 		}
 	}
 	if(ans == 2)
@@ -190,26 +197,30 @@ function clickedAnswer(ans)
 		if(ans == spcCorrectAnswer[getCurrentSpace()])
 		{
 			document.getElementById("answer2").style.backgroundColor = "green";
-			resetQuestion();
+			setTimeout(function() {
+				resetQuestion();
+				document.getElementById("questionBox").style.visibility = "hidden";
+			}, 1500);
+			
 		}
 		else
 		{
 			document.getElementById("answer2").style.backgroundColor = "red";
-			moveBackward(5);
+			setTimeout(function() {
+				moveBackward(5);
+				document.getElementById("questionBox").style.visibility = "hidden";
+			}, 1500);
 		}
 	}
 }
 
 function resetQuestion()
 {
-	setTimeout(function(){
-		console.log("reset");
-		activeDie = true;
-		document.getElementById("dieDisabled2").id = "dieEnabled";
-		document.getElementById("answer1").style.backgroundColor = "rgba(209, 172, 137, 1)";
-		document.getElementById("answer2").style.backgroundColor = "rgba(209, 172, 137, 1)";
-	}, 1500);
-	
+	console.log("reset");
+	activeDie = true;
+	document.getElementById("dieDisabled2").id = "dieEnabled";
+	document.getElementById("answer1").style.backgroundColor = "rgba(209, 172, 137, 1)";
+	document.getElementById("answer2").style.backgroundColor = "rgba(209, 172, 137, 1)";	
 }
 
 function getCurrentSpace()
