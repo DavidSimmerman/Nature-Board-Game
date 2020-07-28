@@ -14,7 +14,7 @@ body {
 
 table {
 	margin: 0 auto;
-	padding: 0;
+	padding: 5vw 0 0 0;
 }
 
 tr {
@@ -31,10 +31,6 @@ td {
 	background-color: rgba(0, 0, 0, .70);
 }
 
-#title {
-	font-size: 5vh;
-}
-
 #dieContainer {
 	overflow: hidden;
 	padding: 0;
@@ -44,6 +40,10 @@ td {
 	height: 7vw;
 	overflow: hidden;
 	padding: 0;
+}
+
+#die:hover {
+	height: 7.5vw;
 }
 
 .space img {
