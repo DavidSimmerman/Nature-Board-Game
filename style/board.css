@@ -36,14 +36,28 @@ td {
 	padding: 0;
 }
 
-#die {
+#dieEnabled {
 	height: 7vw;
 	overflow: hidden;
 	padding: 0;
 }
 
-#die:hover {
+#dieEnabled:hover {
 	height: 7.5vw;
+	cursor: pointer;
+}
+
+#dieDisabled1 {
+	height: 7vw;
+	overflow: hidden;
+	padding: 0;
+}
+
+#dieDisabled2 {
+	height: 7vw;
+	overflow: hidden;
+	padding: 0;
+	opacity: 0.6;
 }
 
 .space img {
@@ -66,7 +80,7 @@ td {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0vw 5vw 0vw 5vw;
-	text-align: justify;
+	text-align: left;
 	color: white;
 }
 

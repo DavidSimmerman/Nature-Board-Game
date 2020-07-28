@@ -69,7 +69,7 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td colspan="3" rowspan="2" id="dieContainer"><image id="die" onclick="rollDice(5)" src="style/images/Dice1.png"></image></td>
+					<td colspan="3" rowspan="2" id="dieContainer"><image id="dieEnabled" onclick="dieClicked()" src="style/images/Dice1.png"></image></td>
 				</tr>
 				<tr>
 					<td class="space" style="visibility: hidden"><image src="style/images/FrogAvatar.png"></image></td>
@@ -84,8 +84,8 @@
 			<table style="padding: 10px 0 0 0">
 				<tr><td id="question">7.) A tree on the other side of your fence has a branch that hangs over and drops leaves into your yard, and you are tired of raking them.</td></tr>
 				<tr><td id="doYou">Do you...</td></tr>
-				<tr><td id="answer1">Cut down the tree branch that keeps dropping leaves</td></tr>
-				<tr><td id="answer2">Leave it be and continue raking</td></tr>
+				<tr><td id="answer1" onclick="clickedAnswer(1)">Cut down the tree branch that keeps dropping leaves</td></tr>
+				<tr><td id="answer2" onclick="clickedAnswer(2)">Leave it be and continue raking</td></tr>
 				<tr></tr>
 			</table>
 		</div>

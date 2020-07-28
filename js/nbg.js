@@ -2,7 +2,92 @@ var spcArray = ["spcStart", "spc1", "spc2", "spc3", "spc4", "spc5", "spc6", "spc
 				"spc11", "spc12", "spc13", "spc14", "spc15", "spc16", "spc17", "spc18", "spc19",
 				"spc20", "spc21", "spc22", "spc23", "spcFinish"];
 				
+var spcQuestion = [
+					" ",
+					"1.) You find a cute turtle in the park that seems to like you.",
+					"2.) You forget your reusable grocery bags in the car.",
+					"3.) You see a piece of trash in the lake.",
+					"4.) There are weeds in your garden.",
+					"5.) You notice bugs eating your garden vegetables.",
+					"6.) You see someone leave their trash on a picnic table.",
+					"7.) A tree on the other side of your fence has a branch that hangs over and drops leaves into your yard, and you are tired of raking them.",
+					"8.) You don't want your pet snake anymore.",
+					"9.) Your family never recycles anything.",
+					"10.) You read that outdoor cats kill hundreds of small animals every year.",
+					"11.) You are packing for a road trip with your family.",
+					"12.) While brushing your teeth.",
+					"13.) There is no recycling can in sight.",
+					"14.) You were invited to a friend's party and they ask you to bring utensils.",
+					"15.) Your friend lives three blocks away (in a safe neighborhood).",
+					"16.) Your cell phone is a couple years old, but it still works. You can afford to buy the newest model that just came out.",
+					"17.) You and your friends agreed to meet at a restaurant for lunch.",
+					"18.) You are working on homework when you mom tells you dinner is ready. As you leave your room, do you...",
+					"19.) You have expired medicine that you need to get rid of.",
+					"20.) You have a mouse problem at home, and you know mice can carry diseases.",
+					"21.) It's a hot summer afternoon.",
+					"22.) You just learned that noise pollution disturbs wildlife, especially baby animals. While repairing your car,",
+					"23.) A baby deer has been alone in your yard for a few hours."
+					];
+					
+var spcAnswer1 = [
+					" ",
+					"Keep it as a pet",
+					"Go back out to get them",
+					"Pick it up",
+					"Use chemicals to kill them",
+					"Purchase effective pesticides",
+					"Ask them to throw it away",
+					"Cut down the tree branch that keeps dropping leaves",
+					"Release it into the wild and set it free",
+					"Try to convince them to start recycling",
+					"Allow your cat to go outside because it really wants to",
+					"Buy a cheap case of plastic water bottles",
+					"Turn off the faucet while you brus",
+					"Throw your empty soda bottle in a nearby trash can",
+					"Bring a box of plastic/disposable ones",
+					"Walk to their house",
+					"Do you replace your phone with a new one",
+					"Drive separately because they live on the other side of town",
+					"Flush it down the toilet/throw it in the trash",
+					"Turn ou the light to use less electricity",
+					"Use poison to kill them",
+					"Open the windows",
+					"Buy a part that makes your car quieter",
+					"Put it in your car and drive it to a local wildlife rehabilitator"
+					];
+					
+var spcAnswer2 = [
+					" ",
+					"Leave it where you found it",
+					"Just use plastic ones at checkout",
+					"Leave it there",
+					"Spend time pulling them out every weekend",
+					"Explore alternative methods",
+					"Say nothing",
+					"Leave it be and continue raking",
+					"Find someone else who's willing to care for it",
+					"Leave it up to them and not bring it up",
+					"Force it to stay inside and learn to be happy indoors",
+					"Buy each person a more expensive reusable water bottle",
+					"Leave it on for only a couple minutes",
+					"Hang onto it until you hopefully find a recycling can",
+					"Silverware that you will have to wash after the party",
+					"Ask someone to drive you",
+					"Keep using the one that you have",
+					"Carpool",
+					"Leave it on because it is convenient and harmless",
+					"Ask your doctor/local health deptartment",
+					"Spring traps, which require you to dispose of the dead mouse",
+					"Turn on the air conditioning",
+					"Buy a cheaper part that does not",
+					"Leave it there, wait for mama to show up, and call a wildlife rehabber if you are still concerned"
+					];
+					
+var spcCorrectAnswer = [0, 2, 1, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 1, 2];
+				
 var currentDie = 1;
+var activeDie = true;
+var canAnswer = false;
 
 window.onload = function() {start();};
 
@@ -61,12 +146,69 @@ function moveBackward(spaces)
 				newSpc.className = "currentSpc";
 				moveBackward(spaces);
 			}
+			else
+			{
+				resetQuestion();
+			}
+		}
+		else
+		{
+			resetQuestion();
 		}
 	}, 500);
 }
 
 function askQuestion()
 {
+	document.getElementById("dieDisabled1").id = "dieDisabled2";
+	var currentSpc = getCurrentSpace();
+	document.getElementById("question").innerHTML = spcQuestion[currentSpc];
+	document.getElementById("answer1").innerHTML = spcAnswer1[currentSpc];
+	document.getElementById("answer2").innerHTML = spcAnswer2[currentSpc];
+	canAnswer = true;
+}
+
+function clickedAnswer(ans)
+{
+	if(!canAnswer) return;
+	canAnswer = false;
+	if(ans == 1)
+	{
+		if(ans == spcCorrectAnswer[getCurrentSpace()])
+		{
+			document.getElementById("answer1").style.backgroundColor = "green";
+			resetQuestion();
+		}
+		else
+		{
+			document.getElementById("answer1").style.backgroundColor = "red";
+			moveBackward(5);
+		}
+	}
+	if(ans == 2)
+	{
+		if(ans == spcCorrectAnswer[getCurrentSpace()])
+		{
+			document.getElementById("answer2").style.backgroundColor = "green";
+			resetQuestion();
+		}
+		else
+		{
+			document.getElementById("answer2").style.backgroundColor = "red";
+			moveBackward(5);
+		}
+	}
+}
+
+function resetQuestion()
+{
+	setTimeout(function(){
+		console.log("reset");
+		activeDie = true;
+		document.getElementById("dieDisabled2").id = "dieEnabled";
+		document.getElementById("answer1").style.backgroundColor = "rgba(209, 172, 137, 1)";
+		document.getElementById("answer2").style.backgroundColor = "rgba(209, 172, 137, 1)";
+	}, 1500);
 	
 }
 
@@ -95,22 +237,22 @@ function rollDice(rolls)
 		switch (currentDie)
 		{
 		case 1:
-			document.getElementById("die").src = "style/images/Dice1.png";
+			document.getElementById("dieDisabled1").src = "style/images/Dice1.png";
 			break;
 		case 2:
-			document.getElementById("die").src = "style/images/Dice2.png";
+			document.getElementById("dieDisabled1").src = "style/images/Dice2.png";
 			break;
 		case 3:
-			document.getElementById("die").src = "style/images/Dice3.png";
+			document.getElementById("dieDisabled1").src = "style/images/Dice3.png";
 			break;
 		case 4:
-			document.getElementById("die").src = "style/images/Dice4.png";
+			document.getElementById("dieDisabled1").src = "style/images/Dice4.png";
 			break;
 		case 5:
-			document.getElementById("die").src = "style/images/Dice5.png";
+			document.getElementById("dieDisabled1").src = "style/images/Dice5.png";
 			break;
 		case 6:
-			document.getElementById("die").src = "style/images/Dice6.png";
+			document.getElementById("dieDisabled1").src = "style/images/Dice6.png";
 			break;
 		}	
 		if(rolls == 0)
@@ -125,6 +267,15 @@ function rollDice(rolls)
 	}, 300);
 }
 
+function dieClicked()
+{
+	if(activeDie)
+	{
+		activeDie = false;
+		document.getElementById("dieEnabled").id = "dieDisabled1";
+		rollDice(5);
+	}	
+}
 
 function winGame()
 {
