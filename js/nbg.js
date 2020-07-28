@@ -293,4 +293,8 @@ function winGame()
 	
 }
 
-
+function debugMove()
+{
+	moveForward(1);
+	document.getElementById("dieEnabled").id = "dieDisabled1";
+}
