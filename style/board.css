@@ -53,6 +53,45 @@ td {
 	overflow: hidden;
 }
 
+#questionBox {
+	margin: 0 auto;
+	background-color: rgba(133, 73, 0, 1);
+	border: 7px solid rgba(82, 45, 0, 1);
+	border-radius: 25px;
+	width: 50vw;
+	font-size: 2vw;
+}
+
+#question {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0vw 5vw 0vw 5vw;
+	text-align: justify;
+	color: white;
+}
+
+#doYou{
+	color: white;
+}
+
+#answer1, #answer2 {
+	width: 100%;
+	padding; 5px;
+	background-color: rgba(209, 172, 137, 1);
+	border: 5px solid rgba(133, 73, 0, 1);
+	border-radius: 100px;
+	color: rgba(82, 45, 0, .8);
+}
+
+#answer1:hover, #answer2:hover {
+	width: 100%;
+	padding; 5px;
+	border: 5px solid rgba(82, 45, 0, 1);
+	border-radius: 100px;
+	color: rgba(82, 45, 0, .8);
+	cursor: pointer;
+}
+
 #spcStart {
 	visibility: visible;
 }
