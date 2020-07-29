@@ -153,15 +153,17 @@ function moveBackward(spaces)
 		}
 		else
 		{
-			resetQuestion();
+			askQuestion();
 		}
 	}, 500);
 }
 
 function askQuestion()
 {
+	document.getElementById("answer1").style.backgroundColor = "rgba(209, 172, 137, 1)";
+	document.getElementById("answer2").style.backgroundColor = "rgba(209, 172, 137, 1)";
 	document.getElementById("questionBox").style.visibility = "visible";
-	document.getElementById("dieDisabled1").id = "dieDisabled2";
+	document.getElementsByClassName("dieGuy")[0].id = "dieDisabled2";
 	var currentSpc = getCurrentSpace();
 	document.getElementById("question").innerHTML = spcQuestion[currentSpc];
 	document.getElementById("answer1").innerHTML = spcAnswer1[currentSpc];
@@ -218,7 +220,7 @@ function resetQuestion()
 {
 	console.log("reset");
 	activeDie = true;
-	document.getElementById("dieDisabled2").id = "dieEnabled";
+	document.getElementsByClassName("dieGuy")[0].id = "dieEnabled";
 	document.getElementById("answer1").style.backgroundColor = "rgba(209, 172, 137, 1)";
 	document.getElementById("answer2").style.backgroundColor = "rgba(209, 172, 137, 1)";	
 }
@@ -248,22 +250,22 @@ function rollDice(rolls)
 		switch (currentDie)
 		{
 		case 1:
-			document.getElementById("dieDisabled1").src = "style/images/Dice1.png";
+			document.getElementsByClassName("dieGuy")[0].src = "style/images/Dice1.png";
 			break;
 		case 2:
-			document.getElementById("dieDisabled1").src = "style/images/Dice2.png";
+			document.getElementsByClassName("dieGuy")[0].src = "style/images/Dice2.png";
 			break;
 		case 3:
-			document.getElementById("dieDisabled1").src = "style/images/Dice3.png";
+			document.getElementsByClassName("dieGuy")[0].src = "style/images/Dice3.png";
 			break;
 		case 4:
-			document.getElementById("dieDisabled1").src = "style/images/Dice4.png";
+			document.getElementsByClassName("dieGuy")[0].src = "style/images/Dice4.png";
 			break;
 		case 5:
-			document.getElementById("dieDisabled1").src = "style/images/Dice5.png";
+			document.getElementsByClassName("dieGuy")[0].src = "style/images/Dice5.png";
 			break;
 		case 6:
-			document.getElementById("dieDisabled1").src = "style/images/Dice6.png";
+			document.getElementsByClassName("dieGuy")[0].src = "style/images/Dice6.png";
 			break;
 		}	
 		if(rolls == 0)
@@ -283,7 +285,7 @@ function dieClicked()
 	if(activeDie)
 	{
 		activeDie = false;
-		document.getElementById("dieEnabled").id = "dieDisabled1";
+		document.getElementsByClassName("dieGuy")[0].id = "dieDisabled1";
 		rollDice(5);
 	}	
 }
