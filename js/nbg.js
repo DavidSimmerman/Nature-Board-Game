@@ -151,6 +151,10 @@ function moveBackward(spaces)
 				resetQuestion();
 			}
 		}
+		else if(getCurrentSpace() == 0)
+		{
+			resetQuestion();
+		}
 		else
 		{
 			askQuestion();
