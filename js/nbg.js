@@ -86,14 +86,28 @@ var spcAnswer2 = [
 var spcCorrectAnswer = [0, 2, 1, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 1, 2];
 				
 var currentDie = 1;
-var activeDie = true;
+var activeDie = false;
 var canAnswer = false;
+var hasWon = false;
+var clickedSpace = 0;
 
 window.onload = function() {start();};
 
 function start()
 {
 	
+}
+
+function startGame(imageName)
+{
+	avatar = "style/images/" + imageName;
+	for(i = 0; i <= 24; i++)
+	{
+		document.getElementById(spcArray[i]).src = avatar;
+	}
+	document.getElementById(spcArray[0]).style.visibility = "visible";
+	document.getElementById("welcomeBox").style.visibility = "hidden";
+	activeDie = true;
 }
 
 function moveForward(spaces) 
@@ -179,43 +193,84 @@ function clickedAnswer(ans)
 {
 	if(!canAnswer) return;
 	canAnswer = false;
-	if(ans == 1)
+	if(hasWon)
 	{
-		if(ans == spcCorrectAnswer[getCurrentSpace()])
+		if(ans == 1)
 		{
-			document.getElementById("answer1").style.backgroundColor = "green";
-			setTimeout(function() {
-				resetQuestion();
-				document.getElementById("questionBox").style.visibility = "hidden";
-			}, 1500);
+			if(ans == spcCorrectAnswer[clickedSpace])
+			{
+				document.getElementById("answer1").style.backgroundColor = "green";
+				setTimeout(function() {
+					document.getElementById("questionBox").style.visibility = "hidden";
+				}, 1500);
+			}
+			else
+			{
+				document.getElementById("answer1").style.backgroundColor = "red";
+				setTimeout(function() {
+					document.getElementById("questionBox").style.visibility = "hidden";
+				}, 1500);
+			}
 		}
-		else
+		if(ans == 2)
 		{
-			document.getElementById("answer1").style.backgroundColor = "red";
-			setTimeout(function() {
-				moveBackward(5);
-				document.getElementById("questionBox").style.visibility = "hidden";
-			}, 1500);
+			if(ans == spcCorrectAnswer[clickedSpace])
+			{
+				document.getElementById("answer2").style.backgroundColor = "green";
+				setTimeout(function() {
+					document.getElementById("questionBox").style.visibility = "hidden";
+				}, 1500);
+				
+			}
+			else
+			{
+				document.getElementById("answer2").style.backgroundColor = "red";
+				setTimeout(function() {
+					document.getElementById("questionBox").style.visibility = "hidden";
+				}, 1500);
+			}
 		}
 	}
-	if(ans == 2)
+	else
 	{
-		if(ans == spcCorrectAnswer[getCurrentSpace()])
+		if(ans == 1)
 		{
-			document.getElementById("answer2").style.backgroundColor = "green";
-			setTimeout(function() {
-				resetQuestion();
-				document.getElementById("questionBox").style.visibility = "hidden";
-			}, 1500);
-			
+			if(ans == spcCorrectAnswer[getCurrentSpace()])
+			{
+				document.getElementById("answer1").style.backgroundColor = "green";
+				setTimeout(function() {
+					resetQuestion();
+					document.getElementById("questionBox").style.visibility = "hidden";
+				}, 1500);
+			}
+			else
+			{
+				document.getElementById("answer1").style.backgroundColor = "red";
+				setTimeout(function() {
+					moveBackward(5);
+					document.getElementById("questionBox").style.visibility = "hidden";
+				}, 1500);
+			}
 		}
-		else
+		if(ans == 2)
 		{
-			document.getElementById("answer2").style.backgroundColor = "red";
-			setTimeout(function() {
-				moveBackward(5);
-				document.getElementById("questionBox").style.visibility = "hidden";
-			}, 1500);
+			if(ans == spcCorrectAnswer[getCurrentSpace()])
+			{
+				document.getElementById("answer2").style.backgroundColor = "green";
+				setTimeout(function() {
+					resetQuestion();
+					document.getElementById("questionBox").style.visibility = "hidden";
+				}, 1500);
+				
+			}
+			else
+			{
+				document.getElementById("answer2").style.backgroundColor = "red";
+				setTimeout(function() {
+					moveBackward(5);
+					document.getElementById("questionBox").style.visibility = "hidden";
+				}, 1500);
+			}
 		}
 	}
 }
@@ -296,11 +351,38 @@ function dieClicked()
 
 function winGame()
 {
+	setTimeout(function() {
+		document.getElementById("winBox").style.visibility = "visible";
+		hasWon = true;
+	}, 500)
 	
 }
 
-function debugMove()
+function hideWinBox() 
 {
-	moveForward(1);
+	document.getElementById("winBox").style.visibility = "hidden";
+}
+
+function showQuestion(spc)
+{
+	console.log("triggered");
+	if (!hasWon)
+	{
+		return;
+	}
+	clickedSpace = spc;
+	document.getElementById("answer1").style.backgroundColor = "rgba(209, 172, 137, 1)";
+	document.getElementById("answer2").style.backgroundColor = "rgba(209, 172, 137, 1)";
+	document.getElementById("questionBox").style.visibility = "visible";
+	document.getElementsByClassName("dieGuy")[0].id = "dieDisabled2";
+	document.getElementById("question").innerHTML = spcQuestion[clickedSpace];
+	document.getElementById("answer1").innerHTML = spcAnswer1[clickedSpace];
+	document.getElementById("answer2").innerHTML = spcAnswer2[clickedSpace];
+	canAnswer = true;
+}
+
+function debugMove(x)
+{
+	moveForward(x);
 	document.getElementById("dieEnabled").id = "dieDisabled1";
 }

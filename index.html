@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="board">
-			<table>
+			<table id="boardTable">
 				<tr>
 					<td></td>
 					<td></td>
@@ -16,19 +16,19 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="space" id="finish"><image class="emptySpc" , id="spcFinish" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" id="finish"><image class="emptySpc" id="spcFinish" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
-					<td class="space"><image class="emptySpc" , id="spc17" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc18" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc19" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc20" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc21" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc22" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc23" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(17)"><image class="emptySpc" id="spc17" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(18)"><image class="emptySpc" id="spc18" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(19)"><image class="emptySpc" id="spc19" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(20)"><image class="emptySpc" id="spc20" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(21)"><image class="emptySpc" id="spc21" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(22)"><image class="emptySpc" id="spc22" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(23)"><image class="emptySpc" id="spc23" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
-					<td class="space"><image class="emptySpc" , id="spc16" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(16)"><image class="emptySpc" id="spc16" src="style/images/FrogAvatar.png"></image></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -37,13 +37,13 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="space"><image class="emptySpc" , id="spc15" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc14" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc13" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc12" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc11" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc10" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc9" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(15)"><image class="emptySpc" id="spc15" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(14)"><image class="emptySpc" id="spc14" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(13)"><image class="emptySpc" id="spc13" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(12)"><image class="emptySpc" id="spc12" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(11)"><image class="emptySpc" id="spc11" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(10)"><image class="emptySpc" id="spc10" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(9)"><image class="emptySpc" id="spc9" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -52,19 +52,19 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="space"><image class="emptySpc" , id="spc8" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(8)"><image class="emptySpc" id="spc8" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
-					<td class="space"><image class="emptySpc" , id="spc1" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc2" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc3" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc4" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc5" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc6" src="style/images/FrogAvatar.png"></image></td>
-					<td class="space"><image class="emptySpc" , id="spc7" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(1)"><image class="emptySpc" id="spc1" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(2)"><image class="emptySpc" id="spc2" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(3)"><image class="emptySpc" id="spc3" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(4)"><image class="emptySpc" id="spc4" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(5)"><image class="emptySpc" id="spc5" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(6)"><image class="emptySpc" id="spc6" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" onclick="showQuestion(7)"><image class="emptySpc" id="spc7" src="style/images/FrogAvatar.png"></image></td>
 				</tr>
 				<tr>
-					<td class="space" id="start"><image class="currentSpc" , id="spcStart" src="style/images/FrogAvatar.png"></image></td>
+					<td class="space" id="start"><image class="currentSpc" id="spcStart" src="style/images/FrogAvatar.png"></image></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -88,8 +88,28 @@
 					<tr></tr>
 				</table>
 			</div>
+			<div id="welcomeBox">
+				<h1>Welcome to Human Nature</h1>
+				<p>Roll the die and move spaces. You will have to answer a question.
+				If you get it right, you roll again. If you get it wrong, you move back 5 spaces.
+				Choose an avatar, then click the die to begin.
+				<table><tr>
+					<td><image onclick="startGame('FrogAvatar.png')" src="style/images/FrogAvatar.png"></image></td>
+					<td><image onclick="startGame('FrogAvatar.png')" src="style/images/FrogAvatar.png"></image></td>
+					<td><image onclick="startGame('FrogAvatar.png')" src="style/images/FrogAvatar.png"></image></td>
+				</tr></table>
+				</p>
+			</div>
+			<div id="winBox" onclick="hideWinBox()">
+				<h1>You win!</h1>
+				<p>You now know a lot about preserving nature!</br>
+					You can now go back and click on any square to try any questions you missed.
+				</p>
+				<p id="clickToExit">Click to exit</p>
+			</div>
 		</div>
-		<button onclick="debugMove()">DEBUG: Move 1 space</button>
+		<button onclick="debugMove(1)">DEBUG: Move 1 space</button>
+		<button onclick="debugMove(24)">DEBUG: Move 24 spaces</button>
 		
 		<script src="./js/nbg.js"></script>
 		

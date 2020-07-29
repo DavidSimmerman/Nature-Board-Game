@@ -12,12 +12,9 @@ body {
 	background-size: 101% 101%;
 }
 
-table {
+#boardTable {
 	margin: 0 auto;
 	padding: 5vw 0 0 0;
-}
-
-tr {
 }
 
 td {
@@ -67,6 +64,74 @@ td {
 	overflow: hidden;
 }
 
+#welcomeBox {
+	margin: 0 auto;
+	background-color: rgba(133, 73, 0, 1);
+	border: 7px solid rgba(82, 45, 0, 1);
+	border-radius: 25px;
+	width: 50vw;
+	font-size: 2vw;
+	position: fixed;
+	top: 10vw;
+	left: 20vw;
+	color: white;
+	padding: 0 5vw;
+}
+
+#winBox {
+	visibility: hidden;
+	margin: 0 auto;
+	background-color: rgba(133, 73, 0, 1);
+	border: 7px solid rgba(82, 45, 0, 1);
+	border-radius: 25px;
+	width: 40vw;
+	font-size: 2vw;
+	position: fixed;
+	top: 10vw;
+	left: 25vw;
+	color: white;
+	padding: 0 5vw;
+}
+
+#winBox h1 {
+	text-align: center
+}
+
+#clickToExit {
+	font-size: 1vw;
+	text-align: center;
+}
+
+#welcomeBox h1 {
+	text-align: center
+}
+
+#welcomeBox table {
+	margin: 0 auto;
+	border-spacing: 3vw 0;
+}
+
+#welcomeBox td {
+	background-color: rgba(209, 172, 137, 1);
+	border: 5px solid rgba(133, 73, 0, 1);
+	border-radius: 20px;
+	color: rgba(82, 45, 0, .8);
+}
+
+#welcomeBox td:hover {
+	border: 5px solid rgba(82, 45, 0, 1);
+	border-radius: 20px;
+	color: rgba(82, 45, 0, .8);
+	cursor: pointer;
+}
+
+#welcomeBox img {
+	margin: 0 auto;
+	height: 10vw;
+	width: 10vw;
+	overflow: hidden;
+}
+
 #questionBox {
 	margin: 0 auto;
 	background-color: rgba(133, 73, 0, 1);
@@ -78,6 +143,11 @@ td {
 	top: 10vw;
 	left: 23.5vw;
 	visibility: hidden;
+}
+
+#questionBox table {
+	margin: 0 auto;
+	width: 100%;
 }
 
 #question {
@@ -111,7 +181,7 @@ td {
 }
 
 #spcStart {
-	visibility: visible;
+	visibility: hidden;
 }
 
 #spc1 {
