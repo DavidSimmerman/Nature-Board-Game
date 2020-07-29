@@ -365,7 +365,6 @@ function hideWinBox()
 
 function showQuestion(spc)
 {
-	console.log("triggered");
 	if (!hasWon)
 	{
 		return;
