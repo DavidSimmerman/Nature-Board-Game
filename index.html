@@ -7,6 +7,18 @@
         <link rel="stylesheet" href="./style/board.css">
 	</head>
 	<body>
+		<audio id="moveSound">
+            <source src="./audio/move.wav" type="audio/mpeg">
+        </audio>
+		<audio id="rightSound">
+            <source src="./audio/rightAnswer.wav" type="audio/mpeg">
+        </audio>
+		<audio id="wrongSound">
+            <source src="./audio/wrongAnswer.wav" type="audio/mpeg">
+        </audio>
+		<audio id="diceSound">
+            <source src="./audio/diceRoll.wav" type="audio/mpeg">
+        </audio>
 		<div id="board">
 			<table id="boardTable">
 				<tr>
@@ -88,26 +100,31 @@
 					<tr></tr>
 				</table>
 			</div>
-			<div id="welcomeBox">
-				<h1>Welcome to Human Nature</h1>
-				<p>Roll the die and move spaces. You will have to answer a question.
-				If you get it right, you roll again. If you get it wrong, you move back 5 spaces.
-				Choose an avatar, then click the die to begin.
-				<table><tr>
-					<td><image onclick="startGame('Avatar1.png')" src="style/images/Avatar1.png"></image></td>
-					<td><image onclick="startGame('Avatar2.png')" src="style/images/Avatar2.png"></image></td>
-					<td><image onclick="startGame('Avatar3.png')" src="style/images/Avatar3.png"></image></td>
-				</tr></table>
-				</p>
-			</div>
-			<div id="winBox" onclick="hideWinBox()">
-				<h1>You win!</h1>
-				<p>You now know a lot about preserving nature!</br>
-					You can now go back and click on any square to try any questions you missed.
-				</p>
-				<p id="clickToExit">Click to exit</p>
-			</div>
 		</div>
+		<div id="welcomeBox">
+			<h1>Welcome to Human Nature!</h1>
+			<p><u>Roll the dice, answer the questions!</u></br>
+				Humans can harm the environment without even knowing it.</br>
+				If you choose the <u>better</u> answer, roll again to move forward!</br>
+				If you choose the <u>worse</u> answer, you will move backward 5 spaces!</br>
+				<b><u>CAN YOU MAKE IT TO THE END?</u></b></br></br>
+				Start by selecting your avatar:
+			<table><tr>
+				<td><image onclick="startGame('Avatar1.png')" src="style/images/Avatar1.png"></image></td>
+				<td><image onclick="startGame('Avatar2.png')" src="style/images/Avatar2.png"></image></td>
+				<td><image onclick="startGame('Avatar3.png')" src="style/images/Avatar3.png"></image></td>
+			</tr></table>
+			</p>
+		</div>
+		<div id="winBox" onclick="hideWinBox()">
+			<h1>YOU WON!</h1>
+			<p>Remember, <u>your</u> actions affect the environtment! If we are kind to nature, nature will be kind to us!</br>
+				You can now go back and click on any square to try any questions you missed.</br></br>
+				<b>Feel free to play again!</b>
+			</p>
+			<p id="clickToExit">Click to exit</p>
+		</div>
+
 		<button onclick="debugMove(1)">DEBUG: Move 1 space</button>
 		<button onclick="debugMove(24)">DEBUG: Move 24 spaces</button>
 		

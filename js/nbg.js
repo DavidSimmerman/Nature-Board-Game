@@ -105,6 +105,7 @@ function startGame(imageName)
 	{
 		document.getElementById(spcArray[i]).src = avatar;
 	}
+	document.getElementById("boardTable").style.visibility = "visible";
 	document.getElementById(spcArray[0]).style.visibility = "visible";
 	document.getElementById("welcomeBox").style.visibility = "hidden";
 	activeDie = true;
@@ -125,6 +126,7 @@ function moveForward(spaces)
 			var newSpc = document.getElementById(spcArray[spcNumber]);
 			newSpc.style.visibility = "visible";
 			newSpc.className = "currentSpc";
+			document.getElementById("moveSound").play()
 			if(spcNumber == 24)
 			{
 				winGame();
@@ -158,6 +160,7 @@ function moveBackward(spaces)
 				var newSpc = document.getElementById(spcArray[spcNumber]);
 				newSpc.style.visibility = "visible";
 				newSpc.className = "currentSpc";
+				document.getElementById("moveSound").play()
 				moveBackward(spaces);
 			}
 			else
@@ -200,6 +203,7 @@ function clickedAnswer(ans)
 			if(ans == spcCorrectAnswer[clickedSpace])
 			{
 				document.getElementById("answer1").style.backgroundColor = "green";
+				document.getElementById("rightSound").play();
 				setTimeout(function() {
 					document.getElementById("questionBox").style.visibility = "hidden";
 				}, 1500);
@@ -207,6 +211,7 @@ function clickedAnswer(ans)
 			else
 			{
 				document.getElementById("answer1").style.backgroundColor = "red";
+				document.getElementById("wrongSound").play();
 				setTimeout(function() {
 					document.getElementById("questionBox").style.visibility = "hidden";
 				}, 1500);
@@ -217,6 +222,7 @@ function clickedAnswer(ans)
 			if(ans == spcCorrectAnswer[clickedSpace])
 			{
 				document.getElementById("answer2").style.backgroundColor = "green";
+				document.getElementById("rightSound").play();
 				setTimeout(function() {
 					document.getElementById("questionBox").style.visibility = "hidden";
 				}, 1500);
@@ -224,6 +230,7 @@ function clickedAnswer(ans)
 			}
 			else
 			{
+				document.getElementById("wrongSound").play();
 				document.getElementById("answer2").style.backgroundColor = "red";
 				setTimeout(function() {
 					document.getElementById("questionBox").style.visibility = "hidden";
@@ -238,6 +245,7 @@ function clickedAnswer(ans)
 			if(ans == spcCorrectAnswer[getCurrentSpace()])
 			{
 				document.getElementById("answer1").style.backgroundColor = "green";
+				document.getElementById("rightSound").play();
 				setTimeout(function() {
 					resetQuestion();
 					document.getElementById("questionBox").style.visibility = "hidden";
@@ -246,6 +254,7 @@ function clickedAnswer(ans)
 			else
 			{
 				document.getElementById("answer1").style.backgroundColor = "red";
+				document.getElementById("wrongSound").play();
 				setTimeout(function() {
 					moveBackward(5);
 					document.getElementById("questionBox").style.visibility = "hidden";
@@ -257,6 +266,7 @@ function clickedAnswer(ans)
 			if(ans == spcCorrectAnswer[getCurrentSpace()])
 			{
 				document.getElementById("answer2").style.backgroundColor = "green";
+				document.getElementById("rightSound").play();
 				setTimeout(function() {
 					resetQuestion();
 					document.getElementById("questionBox").style.visibility = "hidden";
@@ -266,6 +276,7 @@ function clickedAnswer(ans)
 			else
 			{
 				document.getElementById("answer2").style.backgroundColor = "red";
+				document.getElementById("wrongSound").play();
 				setTimeout(function() {
 					moveBackward(5);
 					document.getElementById("questionBox").style.visibility = "hidden";
@@ -345,7 +356,8 @@ function dieClicked()
 	{
 		activeDie = false;
 		document.getElementsByClassName("dieGuy")[0].id = "dieDisabled1";
-		rollDice(5);
+		document.getElementById("diceSound").play();
+		rollDice(6);
 	}	
 }
 

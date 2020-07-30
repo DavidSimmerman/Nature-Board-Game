@@ -1,4 +1,5 @@
 body {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 #board {
@@ -15,6 +16,7 @@ body {
 #boardTable {
 	margin: 0 auto;
 	padding: 5vw 0 0 0;
+	visibility: hidden;
 }
 
 td {
@@ -66,30 +68,32 @@ td {
 
 #welcomeBox {
 	margin: 0 auto;
-	background-color: rgba(133, 73, 0, 1);
-	border: 7px solid rgba(82, 45, 0, 1);
+	text-align: center;
+	background-color: rgba(255, 255, 255, .9);
+	border: 7px solid rgba(0, 0, 0, 1);
 	border-radius: 25px;
 	width: 50vw;
-	font-size: 2vw;
+	font-size: 1.5vw;
 	position: fixed;
 	top: 10vw;
-	left: 20vw;
-	color: white;
-	padding: 0 5vw;
+	left: 23.5vw;
+	color: black;
+	padding: 0 1vw;
 }
 
 #winBox {
 	visibility: hidden;
+	text-align: center;
 	margin: 0 auto;
-	background-color: rgba(133, 73, 0, 1);
-	border: 7px solid rgba(82, 45, 0, 1);
+	background-color: rgba(255, 255, 255, .9);
+	border: 7px solid rgba(0, 0, 0, 1);
 	border-radius: 25px;
 	width: 40vw;
-	font-size: 2vw;
+	font-size: 1.5vw;
 	position: fixed;
 	top: 10vw;
-	left: 25vw;
-	color: white;
+	left: 23.5vw;
+	color: black;
 	padding: 0 5vw;
 }
 
@@ -103,7 +107,7 @@ td {
 }
 
 #welcomeBox h1 {
-	text-align: center
+	
 }
 
 #welcomeBox table {
@@ -112,14 +116,14 @@ td {
 }
 
 #welcomeBox td {
-	background-color: rgba(209, 172, 137, 1);
-	border: 5px solid rgba(133, 73, 0, 1);
+	background-color: rgba(0, 0, 0, 0);
+	border: 5px solid rgba(0, 0, 0, 1);
 	border-radius: 20px;
 	color: rgba(82, 45, 0, .8);
 }
 
 #welcomeBox td:hover {
-	border: 5px solid rgba(82, 45, 0, 1);
+	background-color: rgba(0, 0, 0, .3);
 	border-radius: 20px;
 	color: rgba(82, 45, 0, .8);
 	cursor: pointer;
@@ -127,8 +131,8 @@ td {
 
 #welcomeBox img {
 	margin: 0 auto;
-	height: 10vw;
-	width: 10vw;
+	height: 7vw;
+	width: 7vw;
 	overflow: hidden;
 }
 
